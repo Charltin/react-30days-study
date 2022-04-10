@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../react-denpendence/react.development.js"></script>
+    <script src="../react-denpendence/react-dom.development.js"></script>
+    <script src="../react-denpendence/babel.min.js"></script>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            // 1. 在 {} 中可以正常显示的
+            name: "谷之岚", // string
+            age: 18, // number
+            names: ["雪", "凤", "冰", "王", "笛"], // Array
+
+            // 2. 在 {} 中不能正常显示的
+            test1: null, // null
+            test2: undefined, // undefined
+            test3: true, // boolean
+            flag: true,
+
+            // 3. 对象不能作为 JSX 的子类
+            info: {
+              name: "于睿",
+              age: 20,
+            },
+          };
+        }
+        render() {
+          return (
+            <div>
+              <h2>{this.state.name}</h2>
+              <h2>{this.state.age}</h2>
+              <h2>{this.state.names}</h2>
+
+              <h2>{this.state.test1}</h2>
+              <h2>{this.state.test2}</h2>
+              <h2>{this.state.test3}</h2>
+
+              {/* 为了下面这种情况的时候不会把 null 显示出来，react 中的 null undefined 和 boolean 是默认不显示的 */}
+              <h2>{this.state.flag ? "天光乍破" : null}</h2>
+
+              {/* 如果想要显示可以使用的方法 */}
+              <h2>{this.state.test1.toString()}</h2>
+              <h2>{this.state.test2 + ""}</h2>
+              <h2>{this.state.test3 + ""}</h2>
+
+              { /* <h2>{this.state.info}</h2> 这种写法直接把一个对象传过来是不支持的 */ }
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

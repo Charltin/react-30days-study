@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../react-denpendence/react.development.js"></script>
+    <script src="../react-denpendence/react-dom.development.js"></script>
+    <script src="../react-denpendence/babel.min.js"></script>
+
+    <script type="text/babel">
+      function getSizeImg(imgUrl, size) {
+        return imgUrl + `?param=${size}x${size}`;
+      }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = {
+            title: "三无MarBlue",
+            imgUrl:
+              "https://p1.music.126.net/bQtHIOr2CZvlp-HOxMxH7A==/109951167263218443.jpg",
+            link: "bilibili.com",
+            active: true,
+          };
+        }
+
+        render() {
+          const { title, imgUrl, link, active } = this.state;
+          return (
+            <div>
+              {/* 1. 绑定普通属性 */}
+              <h2 title={title}>杀伐阵云密布</h2>
+              <img src={getSizeImg(imgUrl, 2000)} alt="木兰行" />
+              <a href={link}>小破站传送门</a>
+
+              {/* 2. 绑定class属性 */}
+              <div className="box title">div元素1</div>
+              <div className={"box title " + (active ? "active" : "")}>
+                div元素2
+              </div>
+              <label htmlFor=""></label>
+
+              {/* 3. 绑定style */}
+              <div style={{color:"blue",fontSize:'32px'}}> Color Blue</div>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

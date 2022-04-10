@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01</title>
+</head>
+<body>
+    <h2 class="title">hello world</h2>
+    <button class="btn">改变文本</button>
+    <script>
+        // 传统模式 - 命令式编程：每做一个操作都是给计算机（浏览器）一步步的命令
+
+        // 1. 定义数据
+        let message = "Hello World";
+
+        // 2. 把数据显示在 h2 中
+        const titleEl = document.getElementsByClassName("title")[0];
+        titleEl.innerHTML = message;
+
+        // 3. 按钮事件
+        const btnEl = document.getElementsByClassName("btn")[0];
+        btnEl.addEventListener('click', e => {
+            message = "Hello React"
+            titleEl.innerHTML = message;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 本地引入 -->
+    <script src="../react-denpendence/react.development.js"></script>
+    <script src="../react-denpendence/react-dom.development.js"></script>
+    <script src="../react-denpendence/babel.min.js"></script>
+
+    <!-- 编写代码 -->
+    <script type="text/babel">
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            message: "Hello World",
+            books: [
+              "乌合之众",
+              "瓦尔登湖",
+              "山音",
+              "中国工艺美术史",
+              "JavaScript百炼成仙",
+            ],
+          };
+        }
+
+        render() {
+          const liArray = [];
+          for (let book of this.state.books) {
+            liArray.push(<li>{book}</li>);
+          }
+
+          return (
+            <div>
+              <h2>图书列表1</h2>
+              <ul>{liArray}</ul>
+
+              <h2>图书列表2</h2>
+              <ul>
+                {this.state.books.map((item, index, arr) => {
+                  return <li>{item}</li>;
+                })}
+              </ul>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

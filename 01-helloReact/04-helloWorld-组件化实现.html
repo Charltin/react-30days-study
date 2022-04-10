@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02</title>
+  </head>
+
+  <body>
+    <div id="app">app</div>
+
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <!-- 开始开发 -->
+    <!-- this.btnClick.bind(this) 是为了重新定义 this 的指向，不然 btnClick 中拿不到 this -->
+    <script type="text/babel">
+      // 封装App组件
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            message: "我用四季来等你",
+          };
+        }
+        render() {
+          return (
+            <div>
+              <h2>{this.state.message}</h2>
+              <button onClick={this.btnClick.bind(this)}>change</button>
+            </div>
+          );
+        }
+
+        btnClick() {
+          this.setState({ message: "天分用来梦见你" });
+        }
+      }
+
+      // 渲染组件
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
