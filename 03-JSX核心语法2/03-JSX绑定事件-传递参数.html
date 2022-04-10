@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="app"></div>
+
+		<script src="../react-denpendence/react.development.js"></script>
+		<script src="../react-denpendence/react-dom.development.js"></script>
+		<script src="../react-denpendence/babel.min.js"></script>
+
+		<script type="text/babel">
+			class App extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = {
+						msg: [
+							"我用四季来等你",
+							"天分用来梦见你",
+							"谁用了几千公里",
+							"阻止我 奔向你",
+							"这里下雨湿空气",
+							"你的城市快换季",
+							"重低音听不见你",
+							"轻声唱 R&B",
+						],
+						counter: 0,
+						colorArr: [
+							"red",
+							"orange",
+							"#dfe534",
+							"green",
+							"cyan",
+							"blue",
+							"purple",
+							"black",
+						],
+					};
+				}
+
+				render() {
+					const { msg, counter, colorArr } = this.state;
+					return (
+						<div>
+							<div
+								style={{
+									color: colorArr[counter],
+									fontSize: "50px",
+									fontFamily: "FangSong",
+								}}
+							>
+								{msg[counter]}
+							</div>
+
+							<button onClick={(event) => this.btnClick(event)}>按钮</button>
+
+							<br />
+
+							<ul>
+								{msg.map((item, index, arr) => {
+									return (
+										<li
+											onClick={(e) => this.liClick(item, index, e)}
+											className="item"
+										>
+											{item}
+										</li>
+									);
+								})}
+							</ul>
+
+						</div>
+					);
+				}
+
+				btnClick(e) {
+					console.log("react 合成的对象", e);
+					this.setState({
+						counter:
+							this.state.counter >= this.state.msg.length - 1
+								? 0
+								: this.state.counter + 1,
+					});
+				}
+
+				liClick(item, index, e) {
+					console.log(item, index, e);
+				}
+			}
+
+			ReactDOM.render(<App />, document.getElementById("app"));
+		</script>
+	</body>
+</html>
