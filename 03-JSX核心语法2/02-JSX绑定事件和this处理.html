@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<script src="../react-denpendence/react.development.js"></script>
+		<script src="../react-denpendence/react-dom.development.js"></script>
+		<script src="../react-denpendence/babel.min.js"></script>
+
+		<script type="text/babel">
+			class App extends React.Component {
+				constructor(props) {
+					super(props);
+
+					this.state = {
+						msg: "春风代渡",
+						counter: 100,
+					};
+					this.toAlert = this.toAlert.bind(this);
+				}
+
+				render() {
+					return (
+						<div>
+							<div>{this.state.counter}</div>
+
+							{/* 方案一 通过 bind 显式绑定 */}
+							<button onClick={this.toAlert.bind(this)}>按钮</button>
+
+							{/* 方案一-2 在 constructor 构造器中用 bind 进行绑定 */}
+							<button onClick={this.toAlert}>按钮</button>
+
+							{/* 方案二 定义函数的时候使用箭头函数 */}
+							<button onClick={this.increment}>+1</button>
+
+							{/* 方案三（推荐） 直接在 {} 中写一个箭头函数 利用箭头函数不绑定 this 的特性 在箭头函数中执行 decrement 函数 */}
+							{/* 这里的 this 会往上级作用域中找 也就是 render 中的 this，在这里进行了一个隐式绑定 */}
+							{/* 用箭头函数的优点：传参会特别方便 */}
+							<button onClick={() => this.decrement("于贞")}>-1</button>
+						</div>
+					);
+				}
+
+				toAlert() {
+					console.log(this.state.msg);
+					alert(this.state.msg);
+				}
+
+				// ES6 中给对象增加属性的一种方式 class fields
+				increment = () => {
+					this.setState({
+						counter: this.state.counter + 1,
+					});
+				};
+
+				decrement(name) {
+					this.setState({
+						counter: this.state.counter - 1,
+					});
+					console.log(name);
+				}
+			}
+
+			ReactDOM.render(<App />, document.getElementById("app"));
+		</script>
+	</body>
+</html>
