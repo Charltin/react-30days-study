@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<script src="../react-denpendence/react.development.js"></script>
+		<script src="../react-denpendence/react-dom.development.js"></script>
+		<script src="../react-denpendence/babel.min.js"></script>
+
+		<script type="text/babel">
+			class App extends React.Component {
+				constructor(props) {
+					super(props);
+
+					this.state = {};
+				}
+
+				render() {
+					return (
+						<div>
+							<div className="header">
+								<h1 title="标题">You can be somebody</h1>
+							</div>
+							<div class="content">
+								<h2>Saving is not just to safe</h2>
+								<h2>You can save yourself or others</h2>
+								<button>救赎不为了救赎</button>
+								<hr />
+								<button>主谓宾无谓清楚</button>
+								<hr />
+								<a href="https://limestart.cn/">一束雪柳</a>
+							</div>
+							<div class="footer">
+								<p>Life can be so hard, like I did something wrong.</p>
+							</div>
+						</div>
+					);
+				}
+			}
+
+			ReactDOM.render(<App />, document.getElementById("app"));
+		</script>
+	</body>
+</html>
