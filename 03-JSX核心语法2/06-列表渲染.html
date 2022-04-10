@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<script src="../react-denpendence/react.development.js"></script>
+		<script src="../react-denpendence/react-dom.development.js"></script>
+		<script src="../react-denpendence/babel.min.js"></script>
+
+		<script type="text/babel">
+			class App extends React.Component {
+				constructor(props) {
+					super(props);
+
+					this.state = {
+						msg: [
+							"我用四季来等你",
+							"天分用来梦见你",
+							"谁用了几千公里",
+							"阻止我 奔向你",
+							"这里下雨湿空气",
+							"你的城市快换季",
+							"重低音听不见你",
+							"轻声唱 R&B",
+						],
+						msg2: [
+							"她也是 谁的妈妈",
+							"女儿啊 妻子啊 朋友姐妹啊",
+							"她和她们的想法",
+							"梦想啊 自由啊 不可爱么",
+							"想那么多干嘛",
+							"你别听谁的话",
+							"你已经很棒啦",
+						],
+						numbers: [23, 454, 342, 522, 54, 234, 543, 264, 76, 36, 786, 324],
+					};
+				}
+
+				render() {
+					const { msg, msg2, numbers } = this.state;
+					return (
+						<div>
+
+							<h2>飞奔向你</h2>
+							<ul>
+								{msg.map((item) => {
+									return <li>{item}</li>;
+								})}
+							</ul>
+
+							<h2>数字列表-filter</h2>
+							<ul>
+								{numbers
+									.filter((item) => item % 2 === 0)
+									.map((item) => (
+										<li>{item}</li>
+									))}
+							</ul>
+
+							<h2>数字列表-slice</h2>
+							<ul>
+								{numbers.slice(1, 7).map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</div>
+					);
+				}
+			}
+
+			ReactDOM.render(<App />, document.getElementById("app"));
+		</script>
+	</body>
+</html>
