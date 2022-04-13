@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+}
+.tab-control {
+	display: flex;
+	height: 44px;
+	line-height: 44px;
+	background-color: rgb(239, 239, 239);
+}
+
+.tab-item {
+	flex: 1;
+	text-align: center;
+}
+
+.tab-item span {
+	padding: 5px 8px;
+}
+
+.tab-item.active {
+	color: rgb(200, 0, 0);
+}
+.tab-item.active span {
+	border-bottom: 3px solid rgb(200, 0, 0);
+}
