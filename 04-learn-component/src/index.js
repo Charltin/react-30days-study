@@ -38,7 +38,11 @@ import "./04-组件通讯的案例/style.css";
 // -------- 03 -------
 // import App from './06-跨组件的通讯/03-跨组件通讯-context函数组件'
 // -------- 04 -------
-import App from './06-跨组件的通讯/04-跨组件通讯-多个context'
+// import App from './06-跨组件的通讯/04-跨组件通讯-多个context'
+
+// setState 的使用
+// -------- 01 -------
+import App from './07-setState的使用/01-为什么使用setState'
 
 createRoot(document.getElementById("root")).render(
 	<div>
