@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import "./04-组件通讯的案例/style.css";
+// import "./04-组件通讯的案例/style.css";
 
 // -------- 01 ---------
 // import App from "./01-组件的定义方式/01-组件的定义";
@@ -42,7 +42,11 @@ import "./04-组件通讯的案例/style.css";
 
 // setState 的使用
 // -------- 01 -------
-import App from './07-setState的使用/01-为什么使用setState'
+// import App from './07-setState的使用/01-为什么使用setState'
+// -------- 02 -------
+// import App from './07-setState的使用/02-setState的异步更新'
+// -------- 03 -------
+import App from './07-setState的使用/03-setState的同步更新'
 
 createRoot(document.getElementById("root")).render(
 	<div>

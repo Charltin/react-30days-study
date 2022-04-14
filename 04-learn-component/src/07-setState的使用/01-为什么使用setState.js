@@ -18,7 +18,9 @@ export default class App extends Component {
 		);
 	}
 
-  change() {
-    
-  }
+	change(type) {
+		this.setState({
+			counter: this.state.counter + type,
+		});
+	}
 }
