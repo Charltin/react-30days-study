@@ -46,7 +46,27 @@ import { createRoot } from "react-dom/client";
 // -------- 02 -------
 // import App from './07-setState的使用/02-setState的异步更新'
 // -------- 03 -------
-import App from './07-setState的使用/03-setState的同步更新'
+// import App from './07-setState的使用/03-setState的同步更新'
+// -------- 04 -------
+// import App from './07-setState的使用/04-setState数据的合并'
+// -------- 05 -------
+// import App from './07-setState的使用/05-setState本身的合并'
+
+// React 性能优化
+// -------- 01 -------
+// import App from './08-React性能优化/01-列表中keys的作用'
+// -------- 02 -------
+// import App from './08-React性能优化/02-组件嵌套的render调用'
+// -------- 03 -------
+// import App from "./08-React性能优化/03-shouldComponentUpdate";
+// -------- 04 -------
+// import App from "./08-React性能优化/04-PureComponent";
+// -------- 04 -------
+// import App from "./08-React性能优化/05-memo的使用";
+
+// 前面知识点的补充
+// -------- 01 --------
+import App from './09-前面知识点的补充/01-setState不可变的力量'
 
 createRoot(document.getElementById("root")).render(
 	<div>
