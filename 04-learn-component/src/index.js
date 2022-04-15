@@ -66,7 +66,9 @@ import { createRoot } from "react-dom/client";
 
 // 前面知识点的补充
 // -------- 01 --------
-import App from './09-前面知识点的补充/01-setState不可变的力量'
+// import App from './09-前面知识点的补充/01-setState不可变的力量'
+// -------- 02 --------
+import App from './09-前面知识点的补充/02-全局事件传递'
 
 createRoot(document.getElementById("root")).render(
 	<div>

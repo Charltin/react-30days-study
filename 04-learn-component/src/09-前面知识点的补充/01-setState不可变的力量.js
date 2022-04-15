@@ -25,10 +25,14 @@ export default class App extends PureComponent {
 			<div>
 				<h2>墙头列表</h2>
 				<ul>
-					{this.state.friends.map((item) => {
+					{this.state.friends.map((item, index) => {
 						return (
 							<li key={item.id}>
-								{"姓名：" + item.name + " --- 年龄：" + item.age}
+								姓名：{item.name + " "}
+								年龄：{item.age + " "}
+								<button onClick={() => this.incrementAge(index)}>
+									年龄 +1
+								</button>
 							</li>
 						);
 					})}
@@ -48,7 +52,7 @@ export default class App extends PureComponent {
 	// 	});
 	// }
 
-  // 推荐的写法（正确的写法
+	// 推荐的写法（正确的写法
 	insertData() {
 		const newData = [
 			{ id: 4, name: "王晓佳", age: 22 },
@@ -56,6 +60,14 @@ export default class App extends PureComponent {
 		];
 		const newFriends = [...this.state.friends].concat(newData);
 
+		this.setState({
+			friends: newFriends,
+		});
+	}
+
+	incrementAge(index) {
+		const newFriends = [...this.state.friends];
+		newFriends[index].age += 1;
 		this.setState({
 			friends: newFriends,
 		});
