@@ -10,11 +10,11 @@ class Home extends PureComponent {
 	}
 
 	componentWillUnmount() {
-		eventBus.removeAllListeners("sayHello", this.handleSayHelloListener);
+		eventBus.removeListeners("sayHello", this.handleSayHelloListener);
 	}
 
-	handleSayHelloListener(args) {
-		console.log(123);
+	handleSayHelloListener(...args) {
+		console.log(...args);
 	}
 
 	render() {
@@ -33,7 +33,8 @@ class Profile extends PureComponent {
 	}
 
 	emitEvent() {
-		eventBus.emit("sayHello", "toMyEgo");
+		// emit 的第一个值是 sayHello，传过去的数值是 toMyEgo
+		eventBus.emit("sayHello", "天马行空自由如风", "无拘束倔强得自我");
 	}
 }
 
