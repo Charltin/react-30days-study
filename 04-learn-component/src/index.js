@@ -68,10 +68,26 @@ import { createRoot } from "react-dom/client";
 // -------- 01 --------
 // import App from './09-前面知识点的补充/01-setState不可变的力量'
 // -------- 02 --------
-import App from './09-前面知识点的补充/02-全局事件传递'
+// import App from './09-前面知识点的补充/02-全局事件传递'
+
+// 受控和非受控组件
+// -------- 01 --------
+// import App from './10-受控和非受控组件/01-refs的使用'
+// -------- 02 --------
+// import App from './10-受控和非受控组件/02-受控组件的基本使用'
+// -------- 03 --------
+// import App from './10-受控和非受控组件/03-受控组件-select类型'
+// -------- 04 --------
+// import App from "./10-受控和非受控组件/04-受控组件-多输入";
+// -------- 04 --------
+// import App from "./10-受控和非受控组件/05-非受控组件的使用";
+
+// 高阶组件的使用
+// -------- 01 --------
+import App from "./11-高阶组件的使用/01-高阶组件的定义方式";
 
 createRoot(document.getElementById("root")).render(
 	<div>
-		<App />
+		<App name="高阶组件的定义方式" />
 	</div>
 );
