@@ -12,6 +12,7 @@ App.displayName = "Lce";
 function enhanceComponent(WrappedComponent) {
 	class NewComponent extends PureComponent {
 		render() {
+			// 调用组件的时候传了值，那个值就是在这里用 {...this.props} 拿到，就直接传到了被包裹的App组件中
 			return <WrappedComponent {...this.props} />;
 		}
 	}

@@ -84,10 +84,20 @@ import { createRoot } from "react-dom/client";
 
 // 高阶组件的使用
 // -------- 01 --------
-import App from "./11-高阶组件的使用/01-高阶组件的定义方式";
+// import App from "./11-高阶组件的使用/01-高阶组件的定义方式";
+// createRoot(document.getElementById("root")).render(
+// 	<div>
+// 		<App name="高阶组件的定义方式" />
+// 	</div>
+// );
+
+// -------- 02 --------
+// import App from "./11-高阶组件的使用/02-高阶组件的应用-增强props";
+// -------- 02 --------
+import App from "./11-高阶组件的使用/03-高阶组件的应用-增强props";
 
 createRoot(document.getElementById("root")).render(
 	<div>
-		<App name="高阶组件的定义方式" />
+		<App />
 	</div>
 );
