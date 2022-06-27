@@ -48,19 +48,33 @@ class About extends PureComponent {
     );
   }
 }
+class Detail extends PureComponent {
+  render() {
+    return (
+      <ul>
+        <li>{this.props.nickname}</li>
+        <li>{this.props.level}</li>
+        <li>{this.props.region}</li>
+      </ul>
+    )
+  }
+}
 
 const UserHome = withUser(Home);
 const UserAbout = withUser(About);
+const UserDetail = withUser(Detail);
+
 class App extends PureComponent {
   render() {
     return (
       <div>
-        App
+        App根组件
         <UserContext.Provider
           value={{ nickname: "Lce", level: 99, region: "China" }}
         >
           <UserHome />
           <UserAbout />
+          <UserDetail/>
         </UserContext.Provider>
       </div>
     );
