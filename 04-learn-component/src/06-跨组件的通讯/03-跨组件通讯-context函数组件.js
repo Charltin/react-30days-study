@@ -11,7 +11,7 @@ const UserContext = React.createContext({
 function ProfileHeader() {
 	return (
 		<UserContext.Consumer>
-			{/* 这里的 value 值就是下面 UserContext.Provider 的值 */}
+			{/* 这里的 value 值就是下面 UserContext.Provider 的值，也就是说这里进行了一个隔代传递 */}
 			{(value) => {
 				return (
 					<div>
